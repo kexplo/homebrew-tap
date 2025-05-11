@@ -23,5 +23,7 @@ class DockerMacNetConnect < Formula
     run opt_bin/"docker-mac-net-connect"
     log_path var/"log/docker-mac-net-connect/std_out.log"
     error_log_path var/"log/docker-mac-net-connect/std_error.log"
+    # Keep the home directory of the user who ran sudo.
+    environment_variables HOME: ENV["HOME"]
   end
 end
